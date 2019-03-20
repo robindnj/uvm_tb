@@ -1,12 +1,12 @@
-class scb extends uvm_scoreboard;
+class scoreboard extends uvm_scoreboard;
   virtual fin f;
-  `uvm_component_utils(scb)
+  `uvm_component_utils(scoreboard)
   seq_item qin[$];
   seq_item i;
   bit [0:3] temp;
-  uvm_analysis_imp#(seq_item,scb)item_collected_export;
+  uvm_analysis_imp#(seq_item,scoreboard)item_collected_export;
   //.............................
-  function new(string name="scb",uvm_component parent);
+  function new(string name="scoreboard",uvm_component parent);
     super.new(name,parent);
     i=new();
     item_collected_export=new("item_collected_port",this);

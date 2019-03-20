@@ -4,13 +4,13 @@
 `include "driver.sv"
 `include "monitor.sv"
 
-class ag extends uvm_agent;
-  `uvm_component_utils(ag)
+class agent extends uvm_agent;
+  `uvm_component_utils(agent)
   seqr s;
   dri d;
   mon m;
   
-  function new(string name="ag",uvm_component parent);
+  function new(string name="agent",uvm_component parent);
     super.new(name,parent);
   endfunction
   

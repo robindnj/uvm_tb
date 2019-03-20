@@ -1,11 +1,11 @@
 `include "agent.sv"
 `include "scoreboard.sv"
-class envi extends uvm_env;
-  `uvm_component_utils(envi)
+class environment extends uvm_env;
+  `uvm_component_utils(environment)
   ag a;
   scb sb;
   
-  function new(string name="envi",uvm_component parent);
+  function new(string name="environment",uvm_component parent);
     super.new(name,parent);
   endfunction
   

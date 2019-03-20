@@ -1,6 +1,6 @@
-class seqn extends uvm_sequence#(seq_item);
-  `uvm_object_utils(seqn)
-  function new(string name="seqn");
+class sequence extends uvm_sequence#(seq_item);
+  `uvm_object_utils(sequence)
+  function new(string name="sequence");
     super.new(name);
   endfunction
   

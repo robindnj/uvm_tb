@@ -1,4 +1,4 @@
-interface fin(input logic clk,port_1,port_0,wr_en);
+interface intf(input logic clk,port_1,port_0,wr_en);
  // logic wr_en;
  // logic port_1;
  // logic port_0;

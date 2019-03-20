@@ -1,19 +1,22 @@
-class mon extends uvm_monitor;
+class monitor extends uvm_monitor;
   virtual fin f;
-  `uvm_component_utils(mon)
+  `uvm_component_utils(monitor)
   uvm_analysis_port#(seq_item)item_collected_port;
   seq_item i;
-  function new(string name="mon",uvm_component parent);
+
+  function new(string name="monitor",uvm_component parent);
     super.new(name,parent);
     i=new();
     item_collected_port=new("item_collected_port",this);
   endfunction
+
   // consrtuctor for interface......................
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
      if(!uvm_config_db#(virtual fin)::get(this,"*","fin",f))
       `uvm_fatal("No_f",{"Virtual interface must be set:",get_full_name(),".f"})
-   endfunction
+  endfunction
+
 //..........................................................       
   virtual task run_phase(uvm_phase phase);
    // repeat(5)
@@ -35,5 +38,5 @@ class mon extends uvm_monitor;
     i.print();
     item_collected_port.write(i);
       end
-   endtask
+  endtask
 endclass

@@ -1,6 +1,6 @@
 class coverage extends uvm_component;
   virtual fin f;
-  covergroup cove;
+  covergroup cvr_grp;
      //option.per_instance=1; 
     a1:coverpoint f.wr_en{bins z={0};}
     a2:coverpoint f.port_0{bins z={0000};}
@@ -12,7 +12,7 @@ class coverage extends uvm_component;
   
   function new(string name,uvm_component parent);
     super.new(name,parent);
-   cove=new();
+   cvr_grp=new();
   endfunction
   
      function void build_phase(uvm_phase phase);
@@ -26,7 +26,7 @@ class coverage extends uvm_component;
  task run_phase(uvm_phase phase);
     forever begin
       @(posedge f.clk)
-      cove.sample();
+      cvr_grp.sample();
     end
   endtask
 endclass
